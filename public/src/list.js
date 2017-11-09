@@ -43,8 +43,6 @@ requirejs([], function() {
             }
           }
 
-
-
           $("#file-uploader-btn").on('click', function () {
             upload(path);
           });
@@ -53,21 +51,17 @@ requirejs([], function() {
             $("#file-uploader-bar").css("width", 0);
           });
     
-          // ajax + jQuery上传
           function upload(path) {
             var xhrOnProgress = function (fn) {
-                xhrOnProgress.onprogress = fn; //绑定监听
-                //使用闭包实现监听绑
+                xhrOnProgress.onprogress = fn;
                 return function () {
-                    //通过$.ajaxSettings.xhr();获得XMLHttpRequest对象
-                    var xhr = $.ajaxSettings.xhr();
-                    //如果有监听函数并且xhr对象支持绑定时就把监听函数绑定上去
-                    if (xhrOnProgress.onprogress 
-                      && xhrOnProgress.onprogress === 'function'
-                      && xhr.upload) {
-                        xhr.upload.onprogress = xhrOnProgress.onprogress;
-                    }
-                    return xhr;
+                  var xhr = $.ajaxSettings.xhr();
+                  if (xhrOnProgress.onprogress 
+                    && typeof xhrOnProgress.onprogress === 'function'
+                    && xhr.upload) {
+                      xhr.upload.onprogress = xhrOnProgress.onprogress;
+                  }
+                  return xhr;
                 }
             }
   
@@ -97,9 +91,6 @@ requirejs([], function() {
               }
             })
           }
-
-
-
 
         }
       }
