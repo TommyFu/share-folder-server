@@ -1,0 +1,23 @@
+{
+  "name": "share-folder-server",
+  "version": "1.0.0",
+  "description": "A simple share folder server for internal use.",
+  "scripts": {
+    "start": "node ./app.js",
+    "debug": "node --inspect --debug-brk ./app.js"
+  },
+  "keywords": [
+    "fileSystem"
+  ],
+  "author": "liok3187@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "~4.16.2",
+    "md5.js": "^1.3.4",
+    "multer": "^1.3.0",
+    "mv": "^2.1.1",
+    "streamifier": "^0.1.1",
+    "tar": "^4.0.2"
+  }
+}

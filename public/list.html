@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Internal Share Folder</title>
+<script src="lib/jquery/jquery.min.js"></script>
+<script src="lib/bootstrap/bootstrap.min.js"></script>
+<link rel="stylesheet" href="lib/bootstrap/bootstrap.min.css">
+<link rel="stylesheet" href="lib/bootstrap/bootstrap-theme.min.css">
+<link rel="stylesheet" href="lib/open-iconic/open-iconic-bootstrap.min.css">
+<script data-main="src/list" src="lib/requirejs/require.js"></script>
+
+<script type="text/javascript">
+</script>
+
+<style type="text/css">
+.file-list,
+.file-uploader,
+.file-uploader-progress{
+  width: 80%;
+  margin: 0 auto;
+}
+
+.file-uploader{
+  margin-top: 2em;
+}
+
+.file-uploader-progress{
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+
+.file-list-icon{
+  margin-right: 1em;
+}
+</style>
+</head>
+
+<body>
+
+  <div class="file-uploader form-group">
+    <form action="/upload" enctype="multipart/form-data" method="POST" role="form" class="form-inline">  
+      <input id="file-uploader-selector" type="file" class="form-control"/>
+      <button id="file-uploader-btn" class="form-control">Upload</button>
+    </form>
+  </div>
+
+  <div class="progress file-uploader-progress">
+    <div id="file-uploader-bar" class="progress-bar" role="progressbar" aria-valuenow="40" 
+      aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+      <span class="sr-only">40% Complete</span>
+    </div>
+  </div>
+
+  <div class="file-list">
+    <ul class="list-group"></ul>
+  </div>
+</body>
+
+</html>
+
+
