@@ -96,6 +96,10 @@ app.post('/upload', upload.single('file'), function (req, res, next) {
       res.json({});
       return;
     });
+  }else{
+    res.statusCode = 500;
+    res.end('Upload Failed');
+    return ;
   }
   
 })
