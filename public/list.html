@@ -16,15 +16,25 @@
 <style type="text/css">
 .file-list,
 .file-uploader,
+.file-create-folder,
 .file-uploader-progress{
   width: 80%;
   margin: 0 auto;
 }
 
-.file-uploader{
+.file-create-folder{
   margin-top: 2em;
 }
+#file-folder-name{
+  min-width: 50%;
+}
 
+.file-uploader{
+  margin-top: 1em;
+}
+#file-uploader-selector{
+  min-width: 50%;
+}
 .file-uploader-progress{
   margin-top: 1em;
   margin-bottom: 2em;
@@ -33,10 +43,22 @@
 .file-list-icon{
   margin-right: 1em;
 }
+.file-list-folder{
+  color: orange;
+}
+.file-list-file{
+  color: skyblue;
+}
 </style>
 </head>
 
 <body>
+  <div class="file-create-folder form-group">
+    <form role="form" class="form-inline">  
+      <input id="file-folder-name" type="text" placeholder="New folder name" class="form-control"/>
+      <button id="file-folder-button" class="form-control">Create Folder</button>
+    </form>
+  </div>
 
   <div class="file-uploader form-group">
     <form action="/upload" enctype="multipart/form-data" method="POST" role="form" class="form-inline">  
